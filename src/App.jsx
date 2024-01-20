@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
@@ -14,12 +14,11 @@ function App() {
      <BrowserRouter>
       <Routes>
         <Route element={<Applayout/>}>
-
-        <Route index element={<Navigate replace to="homepage" />} />
-        <Route path="homepage" element={<HomePage />} />
-        <Route path="about" element={<About />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="skills" element={<Skills />} />
+        <Route index element={<Navigate replace to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/skills" element={<Skills />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
