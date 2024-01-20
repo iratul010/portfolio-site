@@ -1,79 +1,66 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../data/logo/logo.png";
-import resume from "../data/resume/Ratul_Resume.pdf";
 
-const Nav = styled.nav`
+const HeaderDiv = styled.div`
   display: flex;
-  justify-content: space-between;
-  background-color: #333;
-  padding: 10px 80px;
-`;
-const Navlist = styled.ul`
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  list-style: none;
-  margin: 0;
-  gap: 0.7rem;
-`;
-
-const Link = styled.a`
-  text-decoration: none;
-  color: var(--color-yellow-700);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-
-  &:link,
-  &:visited {
+  flex-direction: row;
+  height: 40px;
+  background: linear-gradient(90deg, rgb(12, 12, 2), rgb(35, 54, 22));
+  align-items: center;
+  justify-content: space-around;
+  ul {
     display: flex;
-    align-items: center;
-    gap: 1.2rem;
-  }
-
-  &:hover {
-    background-color: #f5f2f2;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 5px 100px;
+    
   }
 `;
-
-const Img = styled.img`
-  height: auto;
-  width: 200px;
-  padding: 0;
-  margin-right: 100px;
-   
-`;
+const HeaderNavLink = styled(NavLink)`
+ &:link,
+ &:visited{
+  color: #fff;
+  transition: color 0.3s ease;
+ }
+ &:hover{
+  color:  var(--color-green-700);
+ }
+  
+`
 function Header() {
   return (
-    <Nav>
-      <a href="/home">
-        <Img src={logo} alt="" />
-      </a>
+    <HeaderDiv>
+      <ul>
+        <li>
+          <HeaderNavLink
+            to="https://www.linkedin.com/in/ratul-islam-19545618b/"
+            target="_blank"
+          >
+            in
+          </HeaderNavLink>
+        </li>
+        <li>
+          <HeaderNavLink to="https://www.facebook.com/ratulislamweb/" target="_blank">
+            fb
+          </HeaderNavLink>
+        </li>
+        <li>
+          <HeaderNavLink>G+</HeaderNavLink>
+        </li>
+      </ul>
 
-      <Navlist>
+      <ul>
         <li>
-          <Link href="/home">Home</Link>
+          <HeaderNavLink to="mailto:iratul010@gmail.com" target="_blank">
+            iratul010@gmail.com
+          </HeaderNavLink>
         </li>
-        <li>
-          <Link href="/about">About</Link>
+        <li> 
+          <HeaderNavLink to="tel:+8801784083508">+8801784083508</HeaderNavLink>
         </li>
-        <li>
-          <Link href="/projects">Projects</Link>
-        </li>
-        <li>
-          <Link href="/skills">Skills</Link>
-        </li>
-        <li>
-          <Link href={resume} download>
-            Download Resume
-          </Link>
-        </li>
-        <li>
-          <Link href="/blog">Blog</Link>
-        </li>
-      </Navlist>
-    </Nav>
+      </ul>
+    </HeaderDiv>
   );
 }
 

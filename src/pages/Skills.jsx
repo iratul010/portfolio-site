@@ -1,9 +1,5 @@
 function Skills() {
-  return (
-    <div>
-      skills
-    </div>
-  )
+  return <div>skills</div>;
 }
 
-export default Skills
+export default Skills;
