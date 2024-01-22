@@ -7,7 +7,7 @@ const Nav = styled.nav`
   display: flex;
   height: 65px;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.042);
+  background-color: rgba(13, 13, 13, 0.44);
   padding: 5px 100px;
   text-align: center;
   
@@ -36,8 +36,6 @@ const NavLinkStyled = styled(NavLink)`
 
   &:hover {
    color: var(--color-green-700);
-   
-
   }
 
   &.active {
