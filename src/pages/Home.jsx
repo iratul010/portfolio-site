@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import Heading from "../ui/Heading";
+import Button from "../ui/Button";
 /*
 const MainContainer = styled.div`
   position: absolute;
@@ -38,11 +39,12 @@ const TheBack = styled.div`
   background-color: #333;
 `;
 */
-const Div = styled.div`
-  position: relative;
-  top: 40%;
+const MainHeader = styled.div`
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  backface-visibility: hidden;
   text-align: center;
 `;
 const moveInLeft = keyframes`
@@ -57,7 +59,7 @@ const moveInLeft = keyframes`
       opacity: 1;
       transform: translate(1);
   }
-`
+`;
 const moveInRight = keyframes`
   0%{
       opacity: 0;
@@ -70,37 +72,94 @@ const moveInRight = keyframes`
       opacity: 1;
       transform: translate(1);
   }
-`
+`;
 const StyledHeading = styled(Heading)`
   letter-spacing: 1.2rem;
   text-shadow: 0.3rem 0.3rem 1.5rem black;
   animation: ${moveInLeft} 1s ease-out;
+  display: block;
+  
   /* animation-duration:1s;
   animation-timing-function: ease-out; */
   /* animation-delay:2s;
   animation-iteration-count: 3; */
-  
 `;
 const P = styled.p`
+  display: block;
   letter-spacing: 0.7rem;
-  animation-name: ${moveInRight} ;//animation: name s timing-function;
-  animation-duration:1s;
+  animation-name: ${moveInRight}; //animation: name s timing-function;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
+  margin-bottom: 10px;
 `;
-
+const ServiceBtn = styled(Button)`
+  text-transform: uppercase;
+ 
+  transition: all 0.2s;
+  display: inline-block;
+  border-radius: 100px;
+  &:link,
+  &:visited {
+    
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  &:focus {
+    outline: 2px solid;
+    
+  }
+  &::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+   
+  }
+  
+ 
+  &.white-btn::after{
+    
+    background-color: white;
+  }
+  &:hover::after{
+ 
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    
+  }
+`;
 function HomePage() {
   return (
-    <Div>
-      <StyledHeading>WEB DEVELOPER</StyledHeading>
-      <P>Ratul Islam</P>
+    <div>
+      <MainHeader>
+        <div>
+          <StyledHeading>WEB DEVELOPER</StyledHeading>
+          <P>Ratul Islam</P>
+        </div>
 
-      {/* <MainContainer>
+        <ServiceBtn className="white-btn" size="large" variant="primary">
+          My Services
+        </ServiceBtn>
+        {/* <MainContainer>
           <TheCard>
             <TheFront>The Front</TheFront>
             <TheBack>The Back</TheBack>
           </TheCard>
         </MainContainer> */}
-    </Div>
+      </MainHeader>
+    </div>
   );
 }
 
