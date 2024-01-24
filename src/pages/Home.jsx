@@ -73,12 +73,24 @@ const moveInRight = keyframes`
       transform: translate(1);
   }
 `;
+const moveInBottom = keyframes`
+  0%{
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  80%{
+    transform: translateY(-5px);
+  }
+  100%{
+      opacity: 1;
+      transform: translate(1);
+  }
+`;
 const StyledHeading = styled(Heading)`
   letter-spacing: 1.2rem;
   text-shadow: 0.3rem 0.3rem 1.5rem black;
   animation: ${moveInLeft} 1s ease-out;
   display: block;
-  
   /* animation-duration:1s;
   animation-timing-function: ease-out; */
   /* animation-delay:2s;
@@ -94,13 +106,15 @@ const P = styled.p`
 `;
 const ServiceBtn = styled(Button)`
   text-transform: uppercase;
- 
   transition: all 0.2s;
-  display: inline-block;
   border-radius: 100px;
+  position: relative;
+  animation: ${moveInBottom} .5s ease-out .75s;
+  animation-fill-mode: backwards;
   &:link,
   &:visited {
-    
+    color: black;
+    display: inline-block;
   }
   &:hover {
     transform: translateY(-3px);
@@ -110,11 +124,11 @@ const ServiceBtn = styled(Button)`
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
-  &:focus {
+   &:focus {
     outline: 2px solid;
-    
   }
-  &::after{
+
+   &::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -124,21 +138,18 @@ const ServiceBtn = styled(Button)`
     top: 0;
     left: 0;
     z-index: -1;
-    transition: all .4s;
-   
-  }
-  
- 
-  &.white-btn::after{
+    transition: all 0.4s;
     
-    background-color: white;
-  }
-  &:hover::after{
+  } 
  
+   &.white-btn::after {
+    background-color: white;
+  } 
+
+    &:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
-    
-  }
+  }  
 `;
 function HomePage() {
   return (
