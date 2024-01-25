@@ -10,6 +10,7 @@ const Nav = styled.nav`
   background-color: rgba(13, 13, 13, 0.44);
   padding: 5px 100px;
   text-align: center;
+  z-index: 100;
   
 `;
 const Navlist = styled.ul`

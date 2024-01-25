@@ -62,17 +62,15 @@ import { createGlobalStyle } from "styled-components";
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   padding: 0;
   margin: 0 ;
- 
-
+  box-sizing: inherit;
   /* Creating animations for dark mode */
   transition: background-color 0.3s, border 0.3s;
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%;//62.5%=px? okay: 62.5/100=0.625*16= 10px;
 }
 
 body {
@@ -82,6 +80,7 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
+   box-sizing: border-box;
   /* padding: 30px; */
 }
 

@@ -6,6 +6,7 @@ const HeaderDiv = styled.div`
   flex-direction: row;
   height: 40px;
   background: linear-gradient(90deg, rgb(12, 12, 2), rgb(35, 54, 22));
+ 
   align-items: center;
   justify-content: space-around;
   ul {
@@ -37,12 +38,12 @@ function Header() {
             to="https://www.linkedin.com/in/ratul-islam-19545618b/"
             target="_blank"
           >
-            in
+            In
           </HeaderNavLink>
         </li>
         <li>
           <HeaderNavLink to="https://www.facebook.com/ratulislamweb/" target="_blank">
-            fb
+            Fb
           </HeaderNavLink>
         </li>
         <li>

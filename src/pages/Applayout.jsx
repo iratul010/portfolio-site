@@ -2,32 +2,38 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "../ui/Footer";
 import PageNav from "../components/PagNav";
-import bg from "../data/img/self-img.jpg";
+ 
 import Header from "../ui/Header";
-
+const StyledAppLayout = styled.div`
+    /* display: grid;
+  grid-template-columns: 26rem 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh; */
+ 
+`
+const Container = styled.div`
+background-color: rgba(1, 86, 38, 0.684); 
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ 
+`
 const Main = styled.main`
-  color: white;
-  height: calc(100vh - 5rem);
-  background-image: linear-gradient(to left bottom,
-      rgba(57, 75, 54, 0.8),
-      rgba(39, 104, 85, 0.8)
-    ),
-    url(${bg});
-  background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh,0 100%);
-  background-position: center;
-
+ 
 `;
+ 
 function Applayout() {
   return (
-    <div>
-      <Header />
+    <StyledAppLayout>
       <Main>
+      <Header />
+        <Container>
         <PageNav />
         <Outlet />
+        </Container>
       </Main>
       <Footer />
-    </div>
+    </StyledAppLayout>
   );
 }
 
