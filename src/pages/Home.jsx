@@ -2,6 +2,7 @@ import Hero from "../features/home/Hero";
 import bg from "../data/img/self-img.jpg";
 import styled from "styled-components";
 import About from "../pages/About"
+import { useState } from "react";
 const Main__Section = styled.section`
  position: relative;
  top:-6.5rem;
@@ -13,19 +14,23 @@ const Main__Section = styled.section`
       rgba(39, 104, 85, 0.8)
     ),
     url(${bg});
-  
+ 
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   background-position: center;
+  
 `;
 
 function HomePage() {
+  
+  const [ref,setRef] = useState(null);
+
   return (
     <div> 
       <Main__Section>
-        <Hero />
+        <Hero Ref={ref} />
       </Main__Section>
-       <About/>
+       <About setRef={setRef}/>
     </div>
   );
 }

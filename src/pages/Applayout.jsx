@@ -12,7 +12,7 @@ const StyledAppLayout = styled.div`
  
 `
 const Container = styled.div`
-background-color: rgba(1, 86, 38, 0.684); 
+background-color: rgba(1, 86, 38, 0.805); 
  margin: 0 auto;
  display: flex;
  flex-direction: column;

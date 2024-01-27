@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
 import styled, { keyframes } from "styled-components";
- 
+ import{ PropTypes} from "prop-types"
  
 import Heading from "../../ui/Heading";
 import Button from "../../ui/Button";
+import { NavLink } from "react-router-dom";
 /*
 const MainContainer = styled.div`
   position: absolute;
@@ -107,10 +109,10 @@ const P = styled.p`
   animation-timing-function: ease-out;
   margin-bottom: 10px;
 `;
-const ServiceBtn = styled(Button)`
+const Btn = styled(Button)`
   text-transform: uppercase;
   transition: all 0.2s;
-  border-radius: 100px;
+  border-radius: .4rem;
   position: relative;
   animation: ${moveInBottom} 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
@@ -136,7 +138,7 @@ const ServiceBtn = styled(Button)`
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: .4rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -145,7 +147,7 @@ const ServiceBtn = styled(Button)`
   }
 
   &.white-btn::after {
-    background-color: white;
+    background-color: #ffffff40;
   }
   &:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
@@ -153,17 +155,26 @@ const ServiceBtn = styled(Button)`
   }
 `;
 
-function Hero() {
+function Hero({Ref}) {
+ 
+  const scrollToNextSection = () => {
+    if (Ref) {
+      Ref.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <MainHeader>
+       
       <div>
         <StyledHeading>WEB DEVELOPER</StyledHeading>
         <P><span style={{letterSpacing:'1px'}}>I&lsquo;M</span> Ratul Islam</P>
       </div>
 
-      <ServiceBtn className="white-btn" size="large" variant="primary">
-        My Services
-      </ServiceBtn>
+      <NavLink  >
+      <Btn className="white-btn" size="large" variant="primary"  onClick={scrollToNextSection} >
+        Get Started
+      </Btn>
+      </NavLink>
       {/* <MainContainer>
       <TheCard>
         <TheFront>The Front</TheFront>
@@ -173,5 +184,8 @@ function Hero() {
     </MainHeader>
   );
 }
-
+ 
+Hero.propTypes = {
+  Ref: PropTypes.func,
+};
 export default Hero;

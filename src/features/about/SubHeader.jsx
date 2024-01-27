@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Sub__Header = styled.div`
 height: 10rem;
-background-color: yellow;
+ 
 `;
 function SubHeader() {
   return (

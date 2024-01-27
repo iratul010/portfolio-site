@@ -4,10 +4,10 @@ import DetailsBio from "./DetailsBio";
 
 const Sub__Details = styled.div`
   height: 100%;
-  background-color: blue;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  
 `;
 
 
