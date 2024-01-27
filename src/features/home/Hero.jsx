@@ -51,6 +51,7 @@ const MainHeader = styled.div`
   transform: translate(-50%, -50%);
   backface-visibility: hidden;
   text-align: center;
+ 
 `;
 const moveInLeft = keyframes`
   0%{

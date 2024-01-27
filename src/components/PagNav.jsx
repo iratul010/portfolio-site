@@ -1,5 +1,5 @@
 import styled from "styled-components";
- import logo from "../data/logo/logo.png";
+import logo from "../data/logo/logo.png";
 import resume from "../data/resume/Ratul_Resume.pdf";
 import { NavLink } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const Nav = styled.nav`
   padding: 5px 100px;
   text-align: center;
   z-index: 100;
-  
+  backdrop-filter: blur(4px);
 `;
 const Navlist = styled.ul`
   display: flex;
@@ -32,18 +32,16 @@ const NavLinkStyled = styled(NavLink)`
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    
   }
 
   &:hover {
-   color: var(--color-green-700);
+    color: var(--color-green-700);
   }
 
   &.active {
     color: #fff;
-  
-    background: linear-gradient(90deg, #a2e2a211, #c2dbbe10)
-    
+
+    background: linear-gradient(90deg, #a2e2a211, #c2dbbe10);
   }
 `;
 const Link = styled.a`
@@ -53,7 +51,7 @@ const Link = styled.a`
   border-radius: 5px;
   transition: background-color 0.3s ease;
   /* background: linear-gradient(90deg, #337d2a, #dcdcdc); */
-   background: linear-gradient(90deg, #168d24, #3c658f); 
+  background: linear-gradient(90deg, #168d24, #3c658f);
   /* background: linear-gradient(90deg, #ffcc00, #ff6699); */
   background-size: 200% 100%;
   color: #ffffff;
@@ -70,15 +68,12 @@ const Link = styled.a`
     color: #fff;
   }
 `;
- 
 
- 
 const Img = styled.img`
   height: auto;
   width: 200px;
   padding: 0;
   margin-right: 100px;
-
 `;
 function PageNav() {
   return (
@@ -90,6 +85,9 @@ function PageNav() {
       <Navlist>
         <li>
           <NavLinkStyled to="/homepage">Home</NavLinkStyled>
+        </li>
+        <li>
+          <NavLinkStyled to="/services">Services</NavLinkStyled>
         </li>
         <li>
           <NavLinkStyled to="/about">About</NavLinkStyled>

@@ -12,12 +12,15 @@ const Details__Bio = styled.div`
   justify-content: center;
   gap: 3rem;
   padding: 5rem;
-   
+  
   & ${Heading} {
     font-size: 4rem;
+    text-shadow: 2px 2px 2px #0cd62a60;
   }
 `;
-const P = styled.p``;
+const P = styled.p`
+color: rgba(249, 249, 249, 0.901);
+`;
 const Ul = styled.ul`
   display: flex;
   flex-direction: column;

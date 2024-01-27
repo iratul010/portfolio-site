@@ -26,7 +26,6 @@ function About({ setRef }) {
 
   useEffect(() => {
     // Access the DOM element using the ref after the component has mounted
-   
     setRef(aboutSectionRef.current);
  
   }, [setRef]);
