@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import styled, { keyframes } from "styled-components";
- import{ PropTypes} from "prop-types"
  
+ import PropTypes from "prop-types";
 import Heading from "../../ui/Heading";
 import Button from "../../ui/Button";
 import { NavLink } from "react-router-dom";
+ 
 /*
 const MainContainer = styled.div`
   position: absolute;
@@ -97,7 +99,9 @@ const StyledHeading = styled(Heading)`
   text-shadow: 0.3rem 0.3rem 1.5rem black;
   animation: ${moveInLeft} 1s ease-out;
   display: block;
-  /* animation-duration:1s;
+  /*
+  import{ PropTypes} from "prop-types"
+   animation-duration:1s;
   animation-timing-function: ease-out; */
   /* animation-delay:2s;
   animation-iteration-count: 3; */
@@ -156,13 +160,18 @@ const Btn = styled(Button)`
   }
 `;
 
-function Hero({Ref}) {
- 
-  const scrollToNextSection = () => {
+function Hero( { setBtn}) {
+  
+ /* const scrollToNextSection = () => {
     if (Ref) {
       Ref.scrollIntoView({ behavior: 'smooth' });
     }
+    onClick={scrollToNextSection} 
   };
+   
+Hero.propTypes = {
+  Ref: PropTypes.func,
+};*/
   return (
     <MainHeader>
        
@@ -172,7 +181,7 @@ function Hero({Ref}) {
       </div>
 
       <NavLink  >
-      <Btn className="white-btn" size="large" variant="primary"  onClick={scrollToNextSection} >
+      <Btn  onClick={()=>setBtn(true)} className="white-btn" size="large" variant="primary"  >
         Get Started
       </Btn>
       </NavLink>
@@ -185,8 +194,7 @@ function Hero({Ref}) {
     </MainHeader>
   );
 }
- 
-Hero.propTypes = {
-  Ref: PropTypes.func,
-};
+Hero.propTypes={
+  setBtn: PropTypes.func,
+}
 export default Hero;

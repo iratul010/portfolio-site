@@ -10,6 +10,7 @@ const Service__Sub = styled.div`
   height: 100%;
   gap: 4rem;
  
+ 
 `;
 
 function SubService() {

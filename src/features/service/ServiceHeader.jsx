@@ -1,5 +1,19 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Heading from "../../ui/Heading";
+const MoveInTop = keyframes`
+  0%{
+      opacity: 0;
+      transform: translateY(-5rem);
+  }
+  80%{
+    transform: translateY(5px);
+  }
+  100%{
+      opacity: 1;
+      transform: translate(1);
+  }
+`;
+
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,6 +21,9 @@ const Div = styled.div`
   padding: 1rem;
   height: 20%;
   width: 35%;
+  animation:${MoveInTop} .5s ease-out 0.35s; 
+  animation-fill-mode: backwards;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
  
    h2 {
     padding: .5rem;
