@@ -1,5 +1,15 @@
+import styled from 'styled-components'
+
+const StyledProjects = styled.div`
+  
+`
+
 function Projects() {
-  return <div>Projects</div>;
+  return (
+    <StyledProjects>
+      Projects
+    </StyledProjects>
+  )
 }
 
 export default Projects;

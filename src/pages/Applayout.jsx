@@ -4,6 +4,7 @@ import Footer from "../ui/Footer";
 import PageNav from "../components/PagNav";
  
 import Header from "../ui/Header";
+ 
 const StyledAppLayout = styled.div`
     /* display: grid;
   grid-template-columns: 26rem 1fr;
@@ -21,14 +22,14 @@ const Container = styled.div`
 const Main = styled.main`
  
 `;
- 
 function Applayout() {
+ 
   return (
     <StyledAppLayout>
       <Main>
-      <Header />
+        <Header />
         <Container>
-        <PageNav />
+        <PageNav  />
         <Outlet />
         </Container>
       </Main>

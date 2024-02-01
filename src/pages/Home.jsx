@@ -4,7 +4,7 @@ import bg from "../data/img/self-img.jpg";
 import styled from "styled-components";
 import About from "../pages/About";
  import Services from "./Services";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 const Main__Section = styled.section`
   position: relative;
   top: -6.5rem;
@@ -23,11 +23,16 @@ const Main__Section = styled.section`
 `;
 
 function HomePage() {
+  const elementRef = useRef(null);
+   
+  
   const [btn, setBtn] = useState(false);
 
-   
+   useEffect(()=>{
+    const sectionOne = elementRef.current;
+    if(!btn) return;
     if (btn) {
-      const sectionOne = document.getElementById("sectionOne");
+  
       /*//OLD-SCHOOL WAY
       if (sectionOne) {
         const s1coords = sectionOne.getBoundingClientRect();
@@ -44,8 +49,10 @@ function HomePage() {
         behavior: "smooth",
     
       });
+      //again 
       setBtn(false);
     }
+   },[btn])
    
 
   //   useEffect(function(){
@@ -70,10 +77,11 @@ function HomePage() {
 
   return (
     <div>
+        
       <Main__Section>
         <Hero setBtn={setBtn} />
       </Main__Section>
-      <div id="sectionOne">
+      <div ref={elementRef} >
         <About />
       </div>
       <Services />

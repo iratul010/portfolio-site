@@ -1,9 +1,12 @@
-import styled from "styled-components";
+/* eslint-disable no-unused-vars */
+import styled, { css } from "styled-components";
 import logo from "../data/logo/logo.png";
 import resume from "../data/resume/Ratul_Resume.pdf";
 import { NavLink } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
-const Nav = styled.nav`
+ 
+const Nav = styled.div`
   display: flex;
   height: 65px;
   justify-content: space-between;
@@ -12,7 +15,17 @@ const Nav = styled.nav`
   text-align: center;
   z-index: 100;
   backdrop-filter: blur(4px);
+ 
+   
+  ${props =>
+    props.className==='Sticky' &&
+    css`
+      position: sticky;
+      top: 0;
+     
+    `}
 `;
+
 const Navlist = styled.ul`
   display: flex;
   justify-content: center;
@@ -76,8 +89,37 @@ const Img = styled.img`
   margin-right: 100px;
 `;
 function PageNav() {
+  // const [isSticky, setSticky] = useState(false);
+ 
+  // const elementRef = useRef(null);
+ 
+  // useEffect(() => {
+  //   const header = elementRef.current;
+  //   console.log(header);
+  //   if (!header) return;
+   
+  //   const stickyFunc = function (entries) {
+      
+     
+  //     entries.forEach(el => {
+  //        console.log(el);
+  //     });
+  //     // if (entry.rootBounds.height===Number('700')) setSticky(true);
+  //     //   else setSticky(false)
+      
+  //   };
+
+  //   const observer = new IntersectionObserver(stickyFunc, {
+  //     root: null,
+  //     threshold: [0,0.5,1],
+   
+
+  //   });
+  //   observer.observe(header);
+  // }, [ ]);
+  // ref={elementRef}  className={isSticky ? "Sticky" : ""}
   return (
-    <Nav>
+    <Nav >
       <a href="/homepage">
         <Img src={logo} />
       </a>
